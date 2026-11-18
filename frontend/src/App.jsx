@@ -8,7 +8,7 @@ import AdminDashboard from "./AdminDashboard";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loanValidationSchema } from "./loanValidation";
-import { predictLoan } from "./services/loanService";
+import { predictLoan } from "./Services/loanService";
 
 const API = "http://127.0.0.1:8000";
 

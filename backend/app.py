@@ -21,14 +21,14 @@ from fastapi.security import (
 )
 from pydantic import BaseModel, Field
 
-from backend.auth import (
+from auth import (
     router as auth_router,
     JWT_SECRET_KEY,
     ALGORITHM,
 )
-from backend.database import get_db_connection
-from backend.admin import router as admin_router
-from backend.repository import ApplicationRepository
+from database import get_db_connection
+from admin import router as admin_router
+from repository import ApplicationRepository
 
 
 # --------------------------------------------------
@@ -59,7 +59,7 @@ app.add_middleware(
 # Load trained machine learning model
 # --------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "loan_model.joblib"
 
 if not MODEL_PATH.exists():

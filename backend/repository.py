@@ -1,7 +1,7 @@
 
 import mysql.connector
 
-from backend.database import get_db_connection
+from database import get_db_connection
 
 
 class ApplicationRepository:

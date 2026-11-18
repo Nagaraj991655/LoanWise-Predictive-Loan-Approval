@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from backend.repository import ApplicationRepository
+from repository import ApplicationRepository
 
 
 @pytest.fixture

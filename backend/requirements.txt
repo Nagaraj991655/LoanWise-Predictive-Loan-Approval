@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+mysql-connector-python
+joblib
+pandas
+scikit-learn
+python-dotenv
+passlib
+bcrypt
+PyJWT
+cryptography
+pwdlib[argon2]
+email-validator

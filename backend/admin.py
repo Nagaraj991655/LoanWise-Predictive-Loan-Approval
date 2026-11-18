@@ -14,7 +14,7 @@ from fastapi import (
 )
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
-from backend.database import get_db_connection
+from database import get_db_connection
 
 
 # --------------------------------------------------

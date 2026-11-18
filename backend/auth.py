@@ -11,7 +11,7 @@ from pydantic import BaseModel, EmailStr, Field
 from pwdlib import PasswordHash
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
-from backend.database import get_db_connection
+from database import get_db_connection
 
 
 # Load environment variables

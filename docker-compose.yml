@@ -1,0 +1,35 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: loanwise-backend
+    ports:
+      - "8000:8000"
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - ./backend/.env
+    environment:
+      - DB_HOST=${DB_HOST:-3.231.152.144}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_USER=${DB_USER:-root}
+      - DB_PASSWORD=${DB_PASSWORD:-password}
+      - DB_NAME=${DB_NAME:-loanwise_db}
+    restart: unless-stopped
+    networks:
+      - loanwise-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: loanwise-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - loanwise-network
+
+networks:
+  loanwise-network:
+    driver: bridge
